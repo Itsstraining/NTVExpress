@@ -1,0 +1,114 @@
+.list {
+    list-style-type: none;
+}
+
+.divstdiv{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.divstdiv .btn {
+    color: #5D6064;
+    padding: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.container{
+    width: auto;
+    height: 70px;
+    background-color: rgb(252, 252, 252);
+}
+button{
+    border: none;
+    background-color: white;
+}
+.header{
+    display: flex;
+    margin: auto;
+    width: auto;
+    height: 70px;
+}
+
+.divacc{
+    margin: auto;
+}
+.account{
+    width: 80px;
+    height: 35px;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.menu {
+    font-size: 35px;
+}
+.logo{
+    margin: auto ;
+}
+
+
+//search bar
+$tl: 0.6s; // transition length
+.divsearchbar{
+    margin-left: 10px;
+}
+
+.search-box {
+  transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  & + label .search-icon {
+    color: rgb(71, 69, 69);
+  }
+  &:hover {
+    color: white;
+    background: rgb(200, 200, 200);
+    box-shadow: 0 0 0 5px rgb(61, 71, 82);
+    & + label .search-icon {
+      color: white;
+    }
+  }
+  &:focus {
+    transition: width $tl cubic-bezier(0, 1.22, 0.66, 1.39), border-radius $tl,
+      background $tl;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding-left: 15px;
+    cursor: text;
+    width: 300px;
+    border-radius: auto;
+    background: rgb(235, 235, 235);
+    color: black;
+    & + label .search-icon {
+      color: black;
+    }
+  }
+  &:not(:focus) {
+    text-indent: -5000px;
+  } // for more-graceful falling back (:not browsers likely support indent)
+}
+
+#search-submit {
+  position: relative;
+  left: -5000px;
+}
+
+.search-icon {
+  position: relative;
+  top: 6px;
+  left: -35px;
+  color: #5D6064;
+  cursor: pointer;
+}
