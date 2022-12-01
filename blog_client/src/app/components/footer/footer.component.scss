@@ -1,0 +1,25 @@
+.container{
+    width: auto;
+    height: 150px;
+    background-color: #666666;
+    display: flex;
+}
+
+.brand{
+    margin: auto;
+    float: left;
+}
+
+h5{
+    color: white;
+}
+
+
+.follow{
+    margin: auto;
+}
+.logo{
+    width: 36px;
+    padding-right: 10px;
+    cursor: pointer;
+}
