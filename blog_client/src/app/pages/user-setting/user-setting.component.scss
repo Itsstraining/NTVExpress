@@ -2,13 +2,15 @@
     display: block;
     display: flex;
     margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .button_setting{
     width: 100%;
     padding-left: 5px;
     color: white;
     margin-top: 7px;
-    font-size: 20px;
+    font-size: larger;
 }
 .item_setting{
     width: 200px;
@@ -17,11 +19,12 @@
 }
 .my_acc{
     background-color: #728F37;
-    border-radius: 5px 5px 10px 10px;
+    border-radius: 10px 10px 25px 25px;
     padding-top: 5px;
     text-align: center;
     height: 28px;
     font-size: larger;
+    color: white;
 }
 #user_setting{
     margin: 0;
@@ -29,30 +32,31 @@
 }
 .box_acc{
     background-color: rgb(164,164,164);
-    border-radius: 5px;
+    border-radius: 10px;
     height: 250px;
 }
 .edit_setting{
     margin-top: 5px;
-    margin-left: 10px;
-    background-color: rgb(164,164,164);
-    width: 70%;
+    margin-left: 30px;
+    background-color: rgba(179,179,179,0.85);
+    width: 1000px;
     height: auto;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 .name_username{
     display: block;
     display: flex;
     margin-left: 5%;
-    width: 100%;
+    width: 90%;
     margin-top: 10px;
 }
 .in{
     background-color: rgb(232,232,232);
     border: 1px solid;
     border-radius: 5px;
-    width: 80%;
-    height: 25px;
+    width: 95%;
+    height: 30px;
+    border: none;
 }
 .container_gender{
     width: 80%;
@@ -71,7 +75,7 @@
     margin-left: 20px;
 }
 #email{
-    width: 100%;
+    width: 97%;
 }
 p{
     font-size: large;
@@ -91,7 +95,6 @@ label{
     margin-left: 1rem;
 }
 .choose::file-selector-button{
-    font-weight: bold;
     padding: 0.5em;
     border: thin solid grey;
     border-radius: 20px;
@@ -119,9 +122,10 @@ label{
     margin-bottom: 40px;
 }
 .can-save{
-    height: 27px;
+    height: 35px;
+    width: 65px;
     margin-left: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     border: none;
     background-color: rgb(232,232,232);
 }

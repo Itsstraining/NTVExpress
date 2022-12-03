@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('./pages/log-in/log-in.module').then((m) => m.LogInModule),
+      import('./pages/login/log-in.module').then((m) => m.LogInModule),
   },
   {
     path: 'create',
