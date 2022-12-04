@@ -21,10 +21,15 @@ const routes: Routes = [
         (m) => m.CreatePostModule
       ),
   },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./pages/signup/signup.module').then(m => m.SignupModule)
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
