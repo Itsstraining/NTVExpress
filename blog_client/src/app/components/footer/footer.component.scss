@@ -7,7 +7,9 @@
 
 .brand{
     margin: auto;
-    float: left;
+    display: block;
+    width: 200px;
+    height: 100px;
 }
 
 h5{
@@ -16,10 +18,28 @@ h5{
 
 
 .follow{
-    margin: auto;
+    margin:auto;
+    display: block;
+    width: 200px;
+    height: 100px;
 }
 .logo{
-    width: 36px;
-    padding-right: 10px;
+    width: 45px;
+    gap: 10px;
+    margin: 5%  auto;
+    margin-left: 15px;
+    float: left;
     cursor: pointer;
+}
+.text1{
+    text-align: left;
+    font-size: 12px;
+    color: white;
+}
+.text2{
+    text-align: left;
+    font-size: 12px;
+    margin: auto;
+    margin-left: 15px;
+    color: white;
 }
