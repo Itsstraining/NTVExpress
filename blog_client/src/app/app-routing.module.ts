@@ -21,7 +21,11 @@ const routes: Routes = [
         (m) => m.CreatePostModule
       ),
   },
-  { path: 'detail', loadChildren: () => import('./pages/detail/detail.module').then(m => m.DetailModule) },
+  {
+    path: 'detail',
+    loadChildren: () =>
+      import('./pages/detail/detail.module').then((m) => m.DetailModule),
+  },
   {
     path: 'homepage',
     loadChildren: () =>
@@ -32,7 +36,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/signup/signup.module').then((m) => m.SignupModule),
   },
-  { path: 'profile', loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule) },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./pages/profile/profile.module').then((m) => m.ProfileModule),
+  },
 ];
 
 @NgModule({
