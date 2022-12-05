@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'profile',
+    path: 'setting',
     loadChildren: () =>
       import('./pages/user-setting/user-setting.module').then(
         (m) => m.UserSettingModule
@@ -22,6 +22,16 @@ const routes: Routes = [
       ),
   },
   { path: 'detail', loadChildren: () => import('./pages/detail/detail.module').then(m => m.DetailModule) },
+  {
+    path: 'homepage',
+    loadChildren: () =>
+      import('./pages/homepage/homepage.module').then((m) => m.HomepageModule),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./pages/signup/signup.module').then((m) => m.SignupModule),
+  },
 ];
 
 @NgModule({
