@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('./pages/log-in/log-in.module').then((m) => m.LogInModule),
+      import('./pages/login/log-in.module').then((m) => m.LogInModule),
   },
   {
     path: 'create',
@@ -21,7 +21,16 @@ const routes: Routes = [
         (m) => m.CreatePostModule
       ),
   },
-  { path: 'homepage', loadChildren: () => import('./pages/homepage/homepage.module').then(m => m.HomepageModule) },
+  {
+    path: 'homepage',
+    loadChildren: () =>
+      import('./pages/homepage/homepage.module').then((m) => m.HomepageModule),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./pages/signup/signup.module').then((m) => m.SignupModule),
+  },
 ];
 
 @NgModule({
