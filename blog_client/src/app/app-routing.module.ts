@@ -21,6 +21,7 @@ const routes: Routes = [
         (m) => m.CreatePostModule
       ),
   },
+  { path: 'homepage', loadChildren: () => import('./pages/homepage/homepage.module').then(m => m.HomepageModule) },
 ];
 
 @NgModule({
