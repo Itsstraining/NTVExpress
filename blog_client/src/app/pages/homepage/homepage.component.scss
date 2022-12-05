@@ -1,0 +1,106 @@
+body {
+  background: #fff;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  margin: 0;
+}
+.background {
+}
+
+.container {
+  background-image: url("../../../assets/images/Rectangle-41.png");
+  width: 100vw;
+}
+
+.top {
+    margin: 30px auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 70%;
+  display: flex;
+}
+
+.left {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.left img {
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  width: 25%;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: xx-large;
+  margin: 0 !important;
+  color: #5d6064;
+  line-height: 36px;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+.account {
+  display: flex;
+  width: 100%;
+  height: 15%;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  margin-left: 10px;
+  width: 80%;
+  padding-bottom: 20px;
+}
+
+.info h3 {
+  font-size: large;
+  font-weight: 500;
+  margin: 0 !important;
+  color: #9bc34c;
+}
+
+.info p {
+  font-size: medium;
+  margin: 0.5rem 0 !important;
+}
+.author {
+  font-size: medium;
+}
+.challenge {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  height: 100vh;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.c-post {
+  display: grid;
+  place-items: center;
+  background: lightpink;
+}
