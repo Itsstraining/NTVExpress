@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'profile',
+    path: 'setting',
     loadChildren: () =>
       import('./pages/user-setting/user-setting.module').then(
         (m) => m.UserSettingModule
@@ -22,9 +22,14 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'homepage',
+    loadChildren: () =>
+      import('./pages/homepage/homepage.module').then((m) => m.HomepageModule),
+  },
+  {
     path: 'signup',
     loadChildren: () =>
-      import('./pages/signup/signup.module').then(m => m.SignupModule)
+      import('./pages/signup/signup.module').then((m) => m.SignupModule),
   },
 ];
 
@@ -32,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
