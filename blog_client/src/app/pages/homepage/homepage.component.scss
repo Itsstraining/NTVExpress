@@ -6,16 +6,14 @@ body {
   line-height: 1.42857143;
   margin: 0;
 }
-.background {
-}
-
 .container {
   background-image: url("../../../assets/images/Rectangle-41.png");
   width: 100vw;
+  background-repeat: no-repeat;
 }
 
 .top {
-    margin: 30px auto;
+  margin: 30px auto;
   width: 100%;
   height: 100%;
   display: flex;
@@ -67,7 +65,6 @@ body {
 }
 
 .avatar img {
-  width: 100%;
   height: 100%;
 }
 
@@ -83,24 +80,118 @@ body {
   margin: 0 !important;
   color: #9bc34c;
 }
-
+.middle{
+  padding-top: 40px;
+}
 .info p {
-  font-size: medium;
+  font-size: smaller;
   margin: 0.5rem 0 !important;
 }
 .author {
   font-size: medium;
 }
 .challenge {
+  padding-bottom: 40px;
   width: 70%;
   margin: 0 auto;
   display: grid;
-  height: 100vh;
+  height: 50vh;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
-.c-post {
+.card {
   display: grid;
-  place-items: center;
-  background: lightpink;
+  background-color: rgba(255, 255, 255, 0.6);
+
+}
+.avatar2{
+  display: flex;
+}
+.info2 {
+  margin-left: 10px;
+}
+.info2 h3 {
+  font-size: medium;
+  font-weight: 500;
+  margin: 0 !important;
+  color: #9bc34c;
+}
+.info2 p {
+  font-size: small;
+  margin: 0.5rem 0 !important;
+}
+.profile-ava{
+  height: fit-content;
+}
+.card h2{
+  font-size: x-large;
+  margin: 0 !important;
+  color: #5d6064;
+  line-height: 36px;
+  font-weight: 500;
+}
+.mid2{
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.content-right{
+  margin-left: 10px;
+  width: 30%;
+}
+.subtance-right{
+  margin-top: 10px;
+  color: rgba(117, 110, 110, 0.942);
+  font-size: small;
+  margin-bottom: 0;
+}
+.day-month-year-right{
+  font-size: x-small;
+  font-weight: 500;
+  color: rgba(117, 110, 110, 0.942);
+}
+.content-left{
+  margin-right: 20px;
+  width: 70%;
+}
+.lastest-post{
+  display: flex;
+  margin-bottom: 50px;
+}
+.lastest-post-info{
+ display: block;
+}
+.lastest-post-info h2{
+  font-size: x-large;
+  margin: 0 !important;
+  color: #5d6064;
+  font-weight: 500;
+}
+.feature-img-lp{
+  width: 30%;
+}
+.content-right h3{
+  border-bottom: 0.5px solid rgb(210, 197, 197); 
+  font-weight:500;
+  font-size: x-large;
+  color: #5d6064;
+}
+.pop-articles h4{
+  font-weight:500;
+  font-size: large;
+  color: #5d6064;
+}
+.pop-articles{
+  padding-bottom: 20px;
+}
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
