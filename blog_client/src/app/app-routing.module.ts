@@ -32,11 +32,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/signup/signup.module').then((m) => m.SignupModule),
   },
-  { path: 'profile', loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule) },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./pages/profile/profile.module').then(m => m.ProfileModule)
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
