@@ -58,15 +58,54 @@ a{
     font-weight: 500;
     color: rgba(117, 110, 110, 0.942);
 }
-.comment{
+.form-control{
     height: 200px;
     width: 100%;
     border: 1px solid #9BC34C;
     border-radius: 20px 20px 0 0;
+    padding-top: 10px;
+    padding-left: 5px;
+    margin: 0;
 }
-.update-img{
-    width: 100%;
-    height: 30px;
+.upload{
+    width: 99.5%;
+    display: flex;
     border: 1px solid #9BC34C;
     border-radius: 0 0 20px 20px;
+    padding-left: 10px;
+}
+.submit{
+    margin-top: 10px;
+    margin-left: 20px;
+    background-color: #9BC34C;
+    border: none;
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+}
+.submit:hover{
+    background-color: #80b93e;
+}
+.ava{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.view-comment{
+    display: flex;
+    margin-top: 20px;
+}
+.frame-comment{
+    margin-left: 20px;
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-top: 10px;
+}
+.name{
+    padding-left: 10px;
+    font-size: smaller;
+}
+.write{
+    margin-left: 25px;
 }
