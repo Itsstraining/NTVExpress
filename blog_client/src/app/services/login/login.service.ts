@@ -6,12 +6,12 @@ import { Auth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
 })
 export class LoginService {
 
-  constructor(
-    private auth: Auth
-  ) { }
+  // constructor(
+  //   private auth: Auth
+  // ) { }
 
-  login() {
-    let user = new GoogleAuthProvider();
-    return signInWithPopup(this.auth, user);
-  }
+  // login() {
+  //   let user = new GoogleAuthProvider();
+  //   return signInWithPopup(this.auth, user);
+  // }
 }

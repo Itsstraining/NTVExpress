@@ -16,8 +16,8 @@ export class LogInComponent implements OnInit {
 
   }
 
-  login() {
-    this.loginService.login();
-  }
+  // login() {
+  //   this.loginService.login();
+  // }
 
 }
