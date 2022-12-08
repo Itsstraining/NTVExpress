@@ -17,3 +17,5 @@ import { MatIconModule } from '@angular/material/icon';
   ]
 })
 export class DetailModule { }
+
+
