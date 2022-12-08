@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login/login.service';
 
+
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
@@ -16,8 +17,14 @@ export class LogInComponent implements OnInit {
 
   }
 
-  // login() {
-  //   this.loginService.login();
-  // }
+  loginWithGoogle() {
+    let res = this.loginService.loginWithGoogle();
+    return res;
+  }
+
+  logoutGoogle() {
+    let res = this.loginService.logoutGoogle();
+    return res;
+  }
 
 }
