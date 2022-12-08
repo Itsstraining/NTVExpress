@@ -100,9 +100,13 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .card {
+  margin-right: 30px;
   display: grid;
   background-color: rgba(255, 255, 255, 0.6);
 
+}
+.f-card{
+  width: 100%;
 }
 .avatar2{
   display: flex;
@@ -194,4 +198,12 @@ body {
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.archives{
+  border: none;
+}
+button{
+  border: none;
+  background-color: white;
 }
