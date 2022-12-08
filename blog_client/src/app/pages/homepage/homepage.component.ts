@@ -16,11 +16,17 @@ const TREE_DATA: FoodNode[] = [
     children: [
       {
         name: 'December',
-        children: [{ name: 'Why do we use it?' }, { name: 'Why do we use it?' }],
+        children: [
+          { name: 'Why do we use it?' },
+          { name: 'Why do we use it?' },
+        ],
       },
       {
         name: 'November',
-        children: [{ name: 'Why do we use it?' }, { name: 'Why do we use it?' }],
+        children: [
+          { name: 'Why do we use it?' },
+          { name: 'Why do we use it?' },
+        ],
       },
     ],
   },
@@ -65,6 +71,6 @@ export class HomepageComponent implements OnInit {
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
-  
+
   ngOnInit(): void {}
 }
