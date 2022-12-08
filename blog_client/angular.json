@@ -108,6 +108,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Blog_client:build:production",
+            "firebaseProject": "ntvexpress-d0d86",
+            "firebaseHostingSite": "ntvexpress-d0d86"
+          }
         }
       }
     }

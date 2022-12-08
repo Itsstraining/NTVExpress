@@ -10,6 +10,10 @@ import { SharedModule } from './modules/shared/shared.module';
 import { HearderFooterComponent } from './components/hearder-footer/hearder-footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component'
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { FooterComponent } from './components/footer/footer.component'
     StoreModule.forRoot({}, {}),
     BrowserAnimationsModule,
     SharedModule,
-    MatIconModule
+    MatIconModule,
+    provideAuth (() => getAuth()),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
   ],
   providers: [],
   bootstrap: [AppComponent]

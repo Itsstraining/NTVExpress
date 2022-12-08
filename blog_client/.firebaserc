@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ntvexpress-d0d86": {
+      "hosting": {
+        "Blog_client": [
+          "ntvexpress-d0d86"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ntvexpress-d0d86"
+  }
+}
