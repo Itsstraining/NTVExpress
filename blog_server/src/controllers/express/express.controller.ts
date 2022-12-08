@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Query, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Query, Param, Put, Delete } from '@nestjs/common';
 import { ExpressService } from 'src/services/express/express.service';
 import { Express } from 'src/schemas/express.schema';
 
@@ -52,6 +52,38 @@ export class ExpressController {
                 express: express
             };
         }catch (error){
+            return {
+                status: 400,
+                message: error.message
+            };
+        }
+    }
+
+    @Put()
+    async update(@Query('id') id: string, @Body() updateExpress: Express) {
+        try {
+            await this.expressService.update(id, updateExpress);
+            return {
+                status: 200,
+                message: 'Update express successfully'
+            };
+        } catch (error) {
+            return {
+                status: 400,
+                message: error.message
+            };
+        }
+    }
+
+    @Delete()
+    async delete(@Query('id') id: string) {
+        try {
+            await this.expressService.delete(id);
+            return {
+                status: 200,
+                message: 'Delete express successfully'
+            };
+        } catch (error) {
             return {
                 status: 400,
                 message: error.message

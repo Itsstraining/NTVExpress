@@ -10,6 +10,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { HearderFooterComponent } from './components/hearder-footer/hearder-footer.component';
 import {MatIconModule} from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './components/footer/footer.component'
     StoreModule.forRoot({}, {}),
     BrowserAnimationsModule,
     SharedModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

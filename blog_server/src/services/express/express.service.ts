@@ -39,5 +39,15 @@ export class ExpressService {
         return express;
     }
 
+    async update(id: string, updateExpress: Express): Promise<Express> {
+        const express = await this.expressModel.findByIdAndUpdate(id, updateExpress);
+        return express;
+    }
+
+    async delete(id: string): Promise<Express> {
+        const express = await this.expressModel.findByIdAndDelete(id);
+        return express;
+    }
+
     
 }
