@@ -2,18 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Express } from '../models/express.model';
+import { URL } from '../../configs/baseURl';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GetexpressService {
+  constructor(private Http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-  // private api = "http://localhost:3000/express/";
-  // itemExpress: any;
-  // getAllExpress(): Observable<Express[]>{
-  //   this.itemExpress = this.http.get(this.api + "all") as Observable<Express[]>;
-  //   return this.itemExpress;
-  // }
+  getAllExpress() {
+    return this.Http.get<Express[]>('http://localhost:3000/express/all') ;
   }
-
+}

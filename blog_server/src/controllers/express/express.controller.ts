@@ -29,11 +29,7 @@ export class ExpressController {
         try {
             const express = await this.expressService.findAll();
 
-            return {
-                status: 200,
-                message: 'Get all express successfully',
-                data: express
-            };
+            return express;
         } catch (error) {
             return {
                 status: 400,
