@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
+import { expressReducer } from 'src/ngrx/reducers/express.reducer';
+import { ExpressEffects } from 'src/ngrx/effects/express.effect';
 
 
 @NgModule({
@@ -25,8 +27,10 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EffectsModule.forRoot([]),
-    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([ExpressEffects]),
+    StoreModule.forRoot({
+      express: expressReducer,
+    }, {}),
     BrowserAnimationsModule,
     SharedModule,
     MatIconModule,
