@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login/login.service';
+import { AuthService } from '../../services/auth/auth.service'
 
 
 @Component({
@@ -10,7 +10,7 @@ import { LoginService } from '../../services/login/login.service';
 export class LogInComponent implements OnInit {
 
   constructor(
-    private loginService: LoginService
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -18,12 +18,12 @@ export class LogInComponent implements OnInit {
   }
 
   loginWithGoogle() {
-    let res = this.loginService.loginWithGoogle();
+    let res = this.authService.login();
     return res;
   }
 
   logoutGoogle() {
-    let res = this.loginService.logoutGoogle();
+    let res = this.authService.logout();
     return res;
   }
 
