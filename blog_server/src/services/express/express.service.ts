@@ -7,20 +7,8 @@ import { Express, ExpressDocument } from 'src/schemas/express.schema';
 export class ExpressService {
     constructor(@InjectModel(Express.name) private expressModel: Model<ExpressDocument>) {}
 
-    async isExist(id: string): Promise<boolean> {
-        const express = await this.expressModel.findOne({id: id});
-        return express !=null;
-    }
 
     async create(createExpress: Express): Promise<Express> {
-        if(await this.isExist(createExpress.id)) {
-            throw new Error('Express already exists');
-        }
-
-        if( !createExpress.id || !createExpress.name || !createExpress.title || !createExpress.content) {
-            throw new Error('Express is not valid');
-        }
-
         const express = new this.expressModel(createExpress);
         return express.save();
     }
