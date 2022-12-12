@@ -5,6 +5,10 @@ import {
 } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { ExpressState } from 'src/ngrx/states/express.state';
+import { Express } from '../../models/express.model';
+import * as ExpressActions from '../../../ngrx/actions/express.action';
 
 interface FoodNode {
   name: string;
@@ -67,12 +71,21 @@ export class HomepageComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor() {
+  expressList$ = this.store.select((store) => store.express.express);
+  constructor(private store: Store<{express:ExpressState}>) {
     this.dataSource.data = TREE_DATA;
+    
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
 
-  ngOnInit(): void {}
+  posts!: Express[];
+  ngOnInit(): void {
+    this.store.dispatch(ExpressActions.getExpress());
+    this.expressList$.subscribe((data) => {
+      console.log(data);
+      this.posts = data;
+    })
+  }
 }

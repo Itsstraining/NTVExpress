@@ -25,4 +25,20 @@ export class ExpressEffects {
       })
     )
   );
+
+  createExpress$ = createEffect(() => 
+  this.action$.pipe(
+    ofType(ExpressAction.createExpress),
+    switchMap((action) =>
+    this.expressServices.addExpress(action.express, action.files)),
+    map((res) => {
+      console.log(res);
+      return ExpressAction.createExpressSuccess({message: res.message});
+    }),
+    catchError((error) => {
+      console.log(error);
+      return of(ExpressAction.createExpressFail({error: error.error.message}));
+    })
+  )
+  );
 }

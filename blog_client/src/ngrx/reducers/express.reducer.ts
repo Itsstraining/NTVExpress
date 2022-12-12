@@ -1,4 +1,4 @@
-import { ExpressState } from '../states/express.state';
+import { createExpressState, ExpressState } from '../states/express.state';
 import { Express } from '../../app/models/express.model';
 import { createReducer, on } from '@ngrx/store';
 import * as ExpressAction from '../actions/express.action';
@@ -43,5 +43,62 @@ export const expressReducer = createReducer(
       isSuccess: false,
       express: [],
     };
-  })
+  }),
 );
+
+  const initCreateExpressState: createExpressState = {
+    isLoading: false,
+    express: <Express>{},
+    error: '',
+    isSuccess: false,
+    message: '',
+  };
+
+  export const createExpressReducer = createReducer(
+    initCreateExpressState,
+    on(ExpressAction.createExpress, (state, action) => {
+      return {
+        ...state,
+        isLoading: true,
+        isSuccess: false,
+        error: '',
+        message: '',
+        express: action.express,
+      };
+    }),
+
+    on(ExpressAction.createExpressSuccess, (state, action) => {
+      return {
+        ...state,
+        isLoading: false,
+        isSuccess: true,
+        express: <Express>{},
+        message: action.message,
+        error: '',
+      };
+    }),
+
+    on(ExpressAction.createExpressFail, (state, { error, type }) => {
+      return {
+        ...state,
+        isLoading: false,
+        isSuccess: false,
+        error: error,
+        message: '',
+        express: <Express>{},
+      };
+    }),
+
+    on(ExpressAction.resetCreateExpress, (state) => {
+      return {
+        ...state,
+        isLoading: false,
+        isSuccess: false,
+        error: '',
+        message: '',
+        express: <Express>{},
+      };
+    }),
+
+  );
+

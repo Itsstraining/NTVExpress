@@ -11,6 +11,27 @@ export class GetexpressService {
   constructor(private Http: HttpClient) {}
 
   getAllExpress() {
-    return this.Http.get<Express[]>('http://localhost:3000/express/all') ;
+    return this.Http.get<Express[]>(URL + `/all`) ;
   }
-}
+
+  addExpress(
+    express: Express,
+    files: Array<File>
+  ): Observable<{
+    data: Express;
+    message: string;
+  }>{
+    const formData = new FormData();
+    for( let i = 0; i<files.length;i++){
+      formData.append('image',files[i]);
+    }
+    formData.append('title',express.title);
+    formData.append('content',express.content);
+
+    return this.Http.post<{
+      data: Express;
+      message: string;
+    }>(URL, formData);
+    }
+  }
+
