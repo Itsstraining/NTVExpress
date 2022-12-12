@@ -20,6 +20,15 @@ export class ProfileComponent implements OnInit {
     public posts: Array<Post> = [];
 
   ngOnInit(): void {
+    this.authService.user$.subscribe(async res => {
+      if (res.email) {
+        this.user = res
+        let tem: any = await this.userService.getProfile(res.email);
+        setTimeout(() => {
+          this.posts = tem.posts;
+        }, 500)
+      }
+    }); 
   }
 
 }

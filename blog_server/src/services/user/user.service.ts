@@ -7,7 +7,7 @@ import { User, UserDocument } from 'src/schemas/user.schema';
 export class UserService {
     constructor(
         @InjectModel(User.name) private userModel: Model<UserDocument>,
-        @InjectModel(Post.name) private postModel: Model<Document>,
+        // @InjectModel(Post.name) private postModel: Model<Document>,
     ) { }
 
     async createUser(user: User) {
