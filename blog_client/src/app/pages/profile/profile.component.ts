@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { User } from '@angular/fire/auth';
+import { Post } from 'src/app/models/post.model';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private userService: UserService
+  ) { }
+
+    public user!: User
+    public posts: Array<Post> = [];
 
   ngOnInit(): void {
+    this.authService.user$.subscribe(async res => {
+      if (res.email) {
+        this.user = res
+        let tem: any = await this.userService.getProfile(res.email);
+        setTimeout(() => {
+          this.posts = tem.posts;
+        }, 500)
+      }
+    }); 
   }
 
 }
