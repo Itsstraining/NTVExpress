@@ -41,6 +41,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/profile/profile.module').then((m) => m.ProfileModule),
   },
+  { path: 'search-result', loadChildren: () => import('./pages/search-result/search-result.module').then(m => m.SearchResultModule) },
 ];
 
 @NgModule({
