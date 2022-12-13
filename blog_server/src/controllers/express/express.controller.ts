@@ -7,7 +7,7 @@ export class ExpressController {
 
     constructor(private expressService: ExpressService) {}
 
-    @Post()
+    @Post("create")
     async create(@Body() createExpress: Express) {
         try {
             await this.expressService.create(createExpress);

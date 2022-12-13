@@ -1,0 +1,49 @@
+.container {
+  background-image: url("../../../assets/images/Rectangle-41.png");
+  padding-top: 30px;
+  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  color: #5d6064;
+  width: 100%;
+}
+.filter {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+.result {
+  width: 50%;
+}
+.search-result{
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+.sort {
+  justify-content: flex-end;
+  width: 50%;
+  display: flex;
+  margin: 0 auto;
+}
+.sort p {
+  margin-right: 10px;
+}
+.author{
+  display: flex;
+}
+.post{
+  width: 70%;
+}
+.image{
+  width: 30%;
+}
+.info{
+  padding-left: 10px;
+}
+.f-image{
+  width: 100%;
+}

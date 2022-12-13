@@ -1,1 +1,1 @@
-export const URL= "http://localhost:3000/express/"
+export const URL= "http://localhost:3000/express"

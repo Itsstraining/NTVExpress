@@ -2,12 +2,15 @@
   <div class="top">
     <div class="box">
       <div class="left">
-        <img src="../../../assets/images/Rectangle-197.png" alt="" />
+<<<<<<< HEAD
+        <img [src]="posts[0].coverImage" alt="" />
+=======
+        <img src="../../../assets/images/Rectangle-197.jpg" alt="" />
+>>>>>>> ffa5f3a76db777f9a92cc6f2246a4dcc05204f78
       </div>
       <div class="right">
         <h2 class="title">
-          To Measure the Immeasurable: How Machine Learning Helps Determine
-          Language Level
+          {{posts[0].title}}
         </h2>
         <p class="author">by Viktor Skliznev, Skyeng data analyst</p>
         <div class="account">
@@ -23,10 +26,10 @@
     </div>
   </div>
   <div class="middle">
-    <div class="challenge">
-      <div class="card">
+    <!-- <div class="challenge">
+      <div class="card" *ngFor="let post of posts">
         <img class="f-card" src="../../../assets/images/Rectangle-169.png" alt="">
-        <h2>There’s No Such Thing as Online Education. How We Will Study Tomorrow</h2>
+        <h2></h2>
         <div class="avatar2">
           <img class="profile-ava" src="../../../assets/images/Rectangle-62.png" alt="" />
           <div class="info2">
@@ -46,64 +49,22 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="mid2">  
       <div class="content-left">
-        <div class="lastest-post">
+        <div class="lastest-post" *ngFor="let post of posts">
           <div class="lastest-post-info">
-            <h2>There’s No Such Thing as Online Education. How We Will Study Tomorrow</h2>
-            <p>A case study from ANTAL Russia, British recruitment agency with branches all over the world including Russia</p>
+            <h2>{{post.title}}</h2>
+            <p>{{post.content}}</p>
             <div class="avatar2">
               <img class="profile-ava" src="../../../assets/images/Rectangle-62.png" alt="" />
               <div class="info2">
                 <h3>Business English</h3>
-                <p>Jun 24 ꞏ 4 min read</p>
+                <p>{{post.createdAt}}</p>
               </div>
             </div>
           </div>
-          <img class="feature-img-lp" src="../../../assets/images/Rectangle-56.png" alt="">
-        </div>
-        <div class="lastest-post">
-          <div class="lastest-post-info">
-            <h2>There’s No Such Thing as Online Education. How We Will Study Tomorrow</h2>
-            <p>A case study from ANTAL Russia, British recruitment agency with branches all over the world including Russia</p>
-            <div class="avatar2">
-              <img class="profile-ava" src="../../../assets/images/Rectangle-62.png" alt="" />
-              <div class="info2">
-                <h3>Business English</h3>
-                <p>Jun 24 ꞏ 4 min read</p>
-              </div>
-            </div>
-          </div>
-          <img class="feature-img-lp" src="../../../assets/images/Rectangle-56.png" alt="">
-        </div>
-        <div class="lastest-post">
-          <div class="lastest-post-info">
-            <h2>There’s No Such Thing as Online Education. How We Will Study Tomorrow</h2>
-            <p>A case study from ANTAL Russia, British recruitment agency with branches all over the world including Russia</p>
-            <div class="avatar2">
-              <img class="profile-ava" src="../../../assets/images/Rectangle-62.png" alt="" />
-              <div class="info2">
-                <h3>Business English</h3>
-                <p>Jun 24 ꞏ 4 min read</p>
-              </div>
-            </div>
-          </div>
-          <img class="feature-img-lp" src="../../../assets/images/Rectangle-56.png" alt="">
-        </div>
-        <div class="lastest-post">
-          <div class="lastest-post-info">
-            <h2>There’s No Such Thing as Online Education. How We Will Study Tomorrow</h2>
-            <p>A case study from ANTAL Russia, British recruitment agency with branches all over the world including Russia</p>
-            <div class="avatar2">
-              <img class="profile-ava" src="../../../assets/images/Rectangle-62.png" alt="" />
-              <div class="info2">
-                <h3>Business English</h3>
-                <p>Jun 24 ꞏ 4 min read</p>
-              </div>
-            </div>
-          </div>
-          <img class="feature-img-lp" src="../../../assets/images/Rectangle-56.png" alt="">
+          <img class="feature-img-lp" [src]="post.coverImage" alt="">
         </div>
       </div>
       <div class="content-right">
