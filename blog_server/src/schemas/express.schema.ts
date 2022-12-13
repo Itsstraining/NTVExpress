@@ -20,11 +20,11 @@ export class Express {
         hashTag: string;
     }>;
 
-    @Prop({
-        required: true,
-        type: mongoose.Schema.Types.ObjectId, ref: "users"
-    })
-    authorId: string;
+    // @Prop({
+    //     required: true,
+    //     type: mongoose.Schema.Types.ObjectId, ref: "users"
+    // })
+    // authorId: string;
 
     @Prop({default: Array})
     tags: string;

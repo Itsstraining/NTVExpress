@@ -16,7 +16,7 @@ export class ExpressEffects {
       ofType(ExpressAction.getExpress),
       switchMap(() => this.expressServices.getAllExpress()),
       map((value) => {
-        console.log(value)
+        // console.log(value)
         return ExpressAction.getExpressSuccess({ express: value });
       }),
       catchError((error) => {

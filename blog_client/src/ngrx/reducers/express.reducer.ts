@@ -24,7 +24,7 @@ export const expressReducer = createReducer(
   }),
 
   on(ExpressAction.getExpressSuccess, (state,action) => {
-    console.log(action.express);
+    // console.log(action.express);
     return {
       ...state,
       isLoading: false,

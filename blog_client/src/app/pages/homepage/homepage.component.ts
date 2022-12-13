@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
@@ -49,6 +49,9 @@ interface ExampleFlatNode {
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit {
+
+  // @Input() posts: Array<Express> = [];
+
   private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -56,6 +59,10 @@ export class HomepageComponent implements OnInit {
       level: level,
     };
   };
+
+  // ngOnChanges(changes: any): void {
+  //   this.posts = changes.posts.currentValue;
+  // }
 
   treeControl = new FlatTreeControl<ExampleFlatNode>(
     (node) => node.level,
@@ -79,7 +86,7 @@ export class HomepageComponent implements OnInit {
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
-
+  @Input() item!: Express;
   posts!: Express[];
   ngOnInit(): void {
     this.store.dispatch(ExpressActions.getExpress());
