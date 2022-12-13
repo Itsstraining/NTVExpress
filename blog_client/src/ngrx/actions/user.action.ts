@@ -5,7 +5,8 @@ export const registerUser = createAction(
     '[User] Register User',
     props<{
         email: string,
-        name: string
+        firstName: string,
+        lastName: string
     }>()
 );
 

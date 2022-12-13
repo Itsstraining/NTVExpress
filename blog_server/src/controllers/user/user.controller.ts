@@ -32,4 +32,9 @@ export class UserController {
     public async updateUser(@Query('id') id: string, @Body() user: User) {
         return await this.userService.updateUser(id, user);
     }
+
+    @Get('/profile/:email')
+    public async getProfile(@Query('email') email: string){
+        return await this.userService.findUserById(email);
+    }
 }

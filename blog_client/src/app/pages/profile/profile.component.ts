@@ -23,7 +23,8 @@ export class ProfileComponent implements OnInit {
     this.authService.user$.subscribe(async res => {
       if (res.email) {
         this.user = res
-        let tem: any = await this.userService.getProfile(res.email);
+        let tem: any = await this.userService.getProfile(res.email).toPromise();
+        console.log(tem);
         setTimeout(() => {
           this.posts = tem.posts;
         }, 500)
