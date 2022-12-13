@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import {
   MatTreeFlatDataSource,
   MatTreeFlattener,
 } from '@angular/material/tree';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { ExpressState } from 'src/ngrx/states/express.state';
+import { Express } from '../../models/express.model';
+import * as ExpressActions from '../../../ngrx/actions/express.action';
 
 interface FoodNode {
   name: string;
@@ -45,6 +49,9 @@ interface ExampleFlatNode {
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit {
+
+  // @Input() posts: Array<Express> = [];
+
   private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -52,6 +59,10 @@ export class HomepageComponent implements OnInit {
       level: level,
     };
   };
+
+  // ngOnChanges(changes: any): void {
+  //   this.posts = changes.posts.currentValue;
+  // }
 
   treeControl = new FlatTreeControl<ExampleFlatNode>(
     (node) => node.level,
@@ -67,12 +78,21 @@ export class HomepageComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  constructor() {
+  expressList$ = this.store.select((store) => store.express.express);
+  constructor(private store: Store<{express:ExpressState}>) {
     this.dataSource.data = TREE_DATA;
+    
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
-
-  ngOnInit(): void {}
+  @Input() item!: Express;
+  posts!: Express[];
+  ngOnInit(): void {
+    this.store.dispatch(ExpressActions.getExpress());
+    this.expressList$.subscribe((data) => {
+      console.log(data);
+      this.posts = data;
+    })
+  }
 }
