@@ -1297,10 +1297,12 @@ p{
   
   .btn-neutral {
     color: #5e72e4;
+    cursor: pointer;
   }
   
   .btn-icon .btn-inner--icon img {
     width: 20px;
+
   }
   
   .btn-icon .btn-inner--text:not(:first-child) {
