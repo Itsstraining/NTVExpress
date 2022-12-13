@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Auth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { Auth, GoogleAuthProvider, signInWithPopup, User } from '@angular/fire/auth';
 import { Store } from '@ngrx/store';
 import { resolve } from 'dns';
-import { from } from 'rxjs';
+import { from, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,8 @@ export class AuthService {
   constructor(
     private auth: Auth,
   ) { }
+
+  public user$ = new BehaviorSubject<User>(<User>{});
 
   login() {
     return from (
