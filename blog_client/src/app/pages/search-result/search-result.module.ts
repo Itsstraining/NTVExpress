@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { SearchResultRoutingModule } from './search-result-routing.module';
 import { SearchResultComponent } from './search-result.component';
 
@@ -11,7 +11,12 @@ import { SearchResultComponent } from './search-result.component';
   ],
   imports: [
     CommonModule,
-    SearchResultRoutingModule
+    SearchResultRoutingModule,
+    MatButtonToggleModule
   ]
 })
 export class SearchResultModule { }
+
+
+
+
